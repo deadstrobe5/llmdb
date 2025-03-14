@@ -1,0 +1,18 @@
+# Database connection
+pymysql
+sqlalchemy
+
+# Vector database 
+qdrant-client
+
+# LLM integration
+openai
+langchain
+langchain-openai
+
+# Utilities
+python-dotenv
+pydantic
+
+# Web app
+streamlit>=1.28.0
