@@ -16,8 +16,12 @@ dist/
 build/
 *.egg-info/
 
-# Local data
-data/
+# Local data - but allow vector_db
+data/*.sql
+data/*.sql.gz
+data/*.csv
+data/*.json
+# Keep vector_db!
 
 # Environment variables
 .env
@@ -30,9 +34,6 @@ data/
 
 # Logs
 *.log
-
-# Vector database files
-vector_db/
 
 # Jupyter Notebook
 .ipynb_checkpoints
