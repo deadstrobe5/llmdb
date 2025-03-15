@@ -44,6 +44,7 @@ st.set_page_config(
 
 st.title("💬 Natural Language to SQL Converter")
 st.markdown("Ask questions about your database in plain English and get SQL queries.")
+st.markdown("**Current database: `behatsdaa_be`**")
 
 # Load components
 embedder, vector_store, nl_to_sql = load_components()
@@ -117,4 +118,5 @@ with st.sidebar:
 
 # Footer
 st.markdown("---")
-st.markdown("Made with ❤️ using Natural Language to SQL with vector embeddings") 
+st.markdown("Made with ❤️") 
+st.markdown("Using database: **behatsdaa_be**") 
