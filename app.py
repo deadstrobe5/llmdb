@@ -119,4 +119,3 @@ with st.sidebar:
 # Footer
 st.markdown("---")
 st.markdown("Made with ❤️") 
-st.markdown("Using database: **behatsdaa_be**") 
