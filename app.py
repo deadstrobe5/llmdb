@@ -31,6 +31,10 @@ def load_components():
         
     return embedder, vector_store, nl_to_sql
 
+# Initialize session state for query if it doesn't exist
+if 'query' not in st.session_state:
+    st.session_state.query = ""
+
 # Page setup
 st.set_page_config(
     page_title="NL to SQL Converter",
@@ -44,8 +48,10 @@ st.markdown("Ask questions about your database in plain English and get SQL quer
 # Load components
 embedder, vector_store, nl_to_sql = load_components()
 
-# Input section
-query = st.text_area("Enter your natural language query:", height=100, 
+# Input section - use the session state value if available
+query = st.text_area("Enter your natural language query:", 
+                    value=st.session_state.query,
+                    height=100, 
                     placeholder="Example: Find all users with admin role")
 
 # Submit button
@@ -102,10 +108,12 @@ with st.sidebar:
         "List all tags used more than 5 times"
     ]
     
-    for example in examples:
-        if st.button(example):
+    # Create a unique key for each button to avoid conflicts
+    for i, example in enumerate(examples):
+        if st.button(example, key=f"example_{i}"):
+            # Update the session state and use st.rerun() instead of experimental_rerun
             st.session_state.query = example
-            st.experimental_rerun()
+            st.rerun()
 
 # Footer
 st.markdown("---")
