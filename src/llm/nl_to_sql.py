@@ -25,7 +25,7 @@ class NLToSQL:
     Converts natural language queries to SQL using OpenAI.
     """
     
-    def __init__(self, model_name: str = "gpt-3.5-turbo"):
+    def __init__(self, model_name: str = "gpt-4o"):
         """
         Initialize the NL to SQL converter.
         
